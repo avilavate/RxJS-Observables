@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs/Observable";
+import { Subscription } from "rxjs/Subscription";
+import 'rxjs/add/observable/interval';
 
 @Component({
   selector: 'o-observables',
@@ -8,6 +10,7 @@ import { Observable } from "rxjs/Observable";
 })
 export class ObservablesComponent implements OnInit {
   myObservable: Observable<string>;
+  onSub1: Subscription; onSub2: Subscription
   create() {
     this.myObservable = Observable.create(observer => {
       observer.next("Start");
@@ -28,10 +31,20 @@ export class ObservablesComponent implements OnInit {
       return () => console.log('disposed')
     });
 
-    this.myObservable.subscribe(
+    this.onSub1 = this.myObservable.subscribe(
       (data) => { console.log(data); },
       () => { console.log("error..."); },
       () => { console.log("Completed...") });
+  }
+  increment() {
+    let myObservable = Observable.interval(1000);
+    this.onSub2 = myObservable.subscribe((data) => {
+      console.log(data);
+    });
+  }
+  destroy() {
+    this.onSub1.unsubscribe();
+    this.onSub2.unsubscribe();
   }
   constructor() { }
   ngOnInit() { }
