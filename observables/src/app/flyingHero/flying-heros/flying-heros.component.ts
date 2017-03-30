@@ -15,7 +15,8 @@ export class FlyingHerosComponent {
     name = name.trim();
     if (!name) { return; }
     let hero = { name, canFly: this.canFly };
-     this.heroes = this.heroes.slice(0, this.heroes.length);
+    //If you comment this pipe will not work !!!
+     this.heroes = this.heroes.slice(0, this.heroes.length); 
     // this.heroes.push(hero);
     this.heroes.push(hero);
   }
