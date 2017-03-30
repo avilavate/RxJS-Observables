@@ -1,14 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from "rxjs/Observable";
 import { Subscription } from "rxjs/Subscription";
 import 'rxjs/add/observable/interval';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'o-observables',
   templateUrl: './observables.component.html',
   styles: []
 })
-export class ObservablesComponent implements OnInit {
+export class ObservablesComponent implements OnInit, OnDestroy {
+  ngOnDestroy(): void {
+    this.destroy();
+  }
+
   myObservable: Observable<string>;
   onSub1: Subscription; onSub2: Subscription
   create() {
@@ -37,7 +42,7 @@ export class ObservablesComponent implements OnInit {
       () => { console.log("Completed...") });
   }
   increment() {
-    let myObservable = Observable.interval(1000);
+    let myObservable = Observable.interval(1000).map((i) => { return i * 2; });
     this.onSub2 = myObservable.subscribe((data) => {
       console.log(data);
     });
