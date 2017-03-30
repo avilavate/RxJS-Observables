@@ -1,0 +1,7 @@
+  <input type="text" #box
+          (keyup.enter)="addHero(box.value); box.value=''"
+          placeholder="hero name">
+  <button class="bt btn-danger" type="reset" (click)="reset()">Reset</button>
+  <div *ngFor="let hero of (heroes | flyingHeros)">
+    {{hero.name}}
+  </div>

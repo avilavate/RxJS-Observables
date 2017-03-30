@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { SubjectComponent } from './observables/subject.component';
 import { ShortlengthPipe } from './shortlength.pipe';
+import { FlyingHerosComponent } from './flyingHero/flying-heros/flying-heros.component';
+import { FlyingHerosPipe } from './flyingHero/flying-heros.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ObservablesComponent,
     SubjectComponent,
-    ShortlengthPipe
+    ShortlengthPipe,
+    FlyingHerosComponent,
+    FlyingHerosPipe
   ],
   imports: [
     BrowserModule,
