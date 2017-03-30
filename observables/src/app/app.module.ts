@@ -9,6 +9,9 @@ import { SubjectComponent } from './observables/subject.component';
 import { ShortlengthPipe } from './shortlength.pipe';
 import { FlyingHerosComponent } from './flyingHero/flying-heros/flying-heros.component';
 import { FlyingHerosPipe } from './flyingHero/flying-heros.pipe';
+import { OServiceService } from "./ObservableService/o-service.service";
+import { SubscriberComponent } from './ObservableService/subscriber.component';
+import { SecondSubjectSubscriberComponent } from './ObservableService/second-subject-subscriber.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,16 @@ import { FlyingHerosPipe } from './flyingHero/flying-heros.pipe';
     SubjectComponent,
     ShortlengthPipe,
     FlyingHerosComponent,
-    FlyingHerosPipe
+    FlyingHerosPipe,
+    SubscriberComponent,
+    SecondSubjectSubscriberComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [OServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
