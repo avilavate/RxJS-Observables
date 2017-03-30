@@ -6,12 +6,14 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { ObservablesComponent } from './observables/observables.component';
 import { SubjectComponent } from './observables/subject.component';
+import { ShortlengthPipe } from './shortlength.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ObservablesComponent,
-    SubjectComponent
+    SubjectComponent,
+    ShortlengthPipe
   ],
   imports: [
     BrowserModule,

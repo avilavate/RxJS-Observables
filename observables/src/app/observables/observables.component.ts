@@ -16,6 +16,7 @@ export class ObservablesComponent implements OnInit, OnDestroy {
 
   myObservable: Observable<string>;
   onSub1: Subscription; onSub2: Subscription
+  someText:string="Some long length text";
   create() {
     this.myObservable = Observable.create(observer => {
       observer.next("Start");
