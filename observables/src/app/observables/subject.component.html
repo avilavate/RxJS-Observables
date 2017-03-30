@@ -1,0 +1,20 @@
+<h4>Subject Observables (Rxjs)</h4>
+<hr>
+<div class="row">
+  <div class="col-xs-6">
+    Value: <input type="number" class="form-control" #input>
+  </div>
+  <div class="col-xs-6">
+    <button class="btn btn-primary" (click)="pushSubject(input.value)">Push</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <ul>
+      <li *ngFor="let mySubject of mySubjects">
+        {{mySubject}}
+      </li>
+    </ul>
+  </div>
+</div>
+<hr>
