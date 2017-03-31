@@ -6,11 +6,11 @@ import { OServiceService } from "./o-service.service";
   templateUrl: './second-subject-subscriber.component.html'
 })
 export class SecondSubjectSubscriberComponent implements OnInit {
-  res: number;
+  res: string;
   constructor(public oServiceService: OServiceService) {
     this.oServiceService.project.subscribe((jsonResponce) => {
-      this.res = <number>jsonResponce.length;
-    })
+      this.res = jsonResponce;
+    });
 
   }
 

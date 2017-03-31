@@ -12,6 +12,7 @@ import { FlyingHerosPipe } from './flyingHero/flying-heros.pipe';
 import { OServiceService } from "./ObservableService/o-service.service";
 import { SubscriberComponent } from './ObservableService/subscriber.component';
 import { SecondSubjectSubscriberComponent } from './ObservableService/second-subject-subscriber.component';
+import { AsyncPipeComponent } from './async-pipe/async-pipe.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SecondSubjectSubscriberComponent } from './ObservableService/second-sub
     FlyingHerosComponent,
     FlyingHerosPipe,
     SubscriberComponent,
-    SecondSubjectSubscriberComponent
+    SecondSubjectSubscriberComponent,
+    AsyncPipeComponent
   ],
   imports: [
     BrowserModule,
